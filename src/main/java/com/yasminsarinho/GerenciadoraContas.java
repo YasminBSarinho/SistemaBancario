@@ -67,7 +67,7 @@ public class GerenciadoraContas {
 	/**
 	 * Informa se uma determinada conta est� ativa ou n�o.
 	 * @param idConta ID da conta cujo status ser� verificado
-	 * @return true se a conta est� ativa. False, caso contr�rio. 
+	 * @return true se a conta est� ativa. False, caso contr�rio.
 	 */
 	public boolean contaAtiva (int idConta) {
 		
@@ -84,11 +84,11 @@ public class GerenciadoraContas {
 		
 		return contaAtiva;
 	}
-	
+
 	/**
 	 * Transfere um determinado valor de uma conta Origem para uma conta Destino.
 	 * Caso n�o haja saldo suficiente, o valor n�o ser� transferido.
-	 * 
+	 *
 	 * @param idContaOrigem conta que ter� o valor deduzido
 	 * @param valor valor a ser transferido
 	 * @param idContaDestino conta que ter� o valor acrescido
@@ -101,11 +101,11 @@ public class GerenciadoraContas {
 		ContaCorrente contaOrigem = pesquisaConta(idContaOrigem);
 		ContaCorrente contaDestino = pesquisaConta(idContaDestino);
 		
-//		if(contaOrigem.getSaldo() >= valor){
+		if(contaOrigem.getSaldo() >= valor){
 			contaDestino.setSaldo(contaDestino.getSaldo() + valor);
 			contaOrigem.setSaldo(contaOrigem.getSaldo() - valor);
 			sucesso = true;
-//		}
+		}
 	
 		return sucesso;
 	}
